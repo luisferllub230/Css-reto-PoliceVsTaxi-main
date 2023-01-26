@@ -46,6 +46,71 @@ ul {
   }
 }
 
+/* ------------------ taxi car ------------------ */
+
+.taxi {
+  position: absolute;
+  top: 50px;
+  width: 275px;
+  height: 100px;
+  background-color: rgb(28 27 27);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: solid 7px rgb(230, 209, 26);
+  border-right: 15px solid rgb(230, 209, 26);
+  border-left: 15px solid rgb(230, 209, 26);
+  border-radius: 20px;
+  transform: rotate(-45deg);
+  animation: taxi_animation linear 4s infinite;
+}
+
+.taxi--top {
+  height: 88px;
+  width: 100px;
+  background-color: rgb(231, 228, 6);
+  display: flex;
+  
+}
+
+.taxi--top::after {
+  content: attr(labelName);
+  position: absolute;
+  color: #fff;
+  top: 25px;
+  left: -26px;
+  width: 100px;
+  height: 50%;
+  background-color: rgb(231, 228, 6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: rotate(90deg);
+  border-radius: 0 0 7px 7px;
+}
+
+.taxi--top::before {
+  content: attr(labelName);
+  position: absolute;
+  color: #fff;
+  top: 25px;
+  right: -26px;
+  width: 100px;
+  height: 50%;
+  background-color: rgb(231, 228, 6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: rotate(-90deg);
+  border-radius: 0 0 7px 7px;
+}
+
+.taxi span {
+  position: relative;
+  font-weight: 900;
+  transform: rotate(90deg);
+}
+
 /* ------------------ police car ------------------ */
 
 
@@ -62,7 +127,41 @@ ul {
   border-left: 15px solid  rgb(88, 86, 86);
   border-radius: 20px;
   transform: rotate(-45deg);
+  animation: policeCar_animation linear 4s infinite;
 }
+
+.policeCar2 {
+  position: absolute;
+  top: 500px;
+  left: 0;
+  animation: policeCar_animation2 linear 4s infinite;
+}
+
+
+@keyframes policeCar_animation {
+  0% {
+    transform: rotate(-45deg) translatey(100px);
+  }
+  50% {
+    transform: rotate(-45deg) translatey(0px);
+  }
+  100% {
+    transform: rotate(-45deg) translatey(100px);
+  }
+}
+
+@keyframes policeCar_animation2 {
+  0% {
+    transform: rotate(-45deg) translatey(0px);
+  }
+  50% {
+    transform: rotate(-45deg) translatey(100px);
+  }
+  100% {
+    transform: rotate(-45deg) translatey(0px);
+  }
+}
+
 
 .policeCar--top {
   height: 88px;
@@ -151,7 +250,6 @@ ul {
   background-color: rgb(17, 0, 248);
   animation: policeLights_animation_blue linear 1s infinite;
 }
-
 @keyframes policeLights_animation_red {
 
   0% {
@@ -220,6 +318,21 @@ ul li.windows2 {
   box-shadow: 0px -82px white;
 }
 
+.taxi--top ul li.windows1 {
+  background-color: rgb(231, 228, 6);
+  box-shadow: 69px 139px rgb(231, 228, 6);
+}
+
+.taxi--top ul li.windows1::after {
+  background-color: rgb(231, 228, 6);
+  box-shadow: -71px 135px rgb(231, 228, 6);
+}
+
+.taxi--top ul li.windows2 {
+  background-color: rgb(231, 228, 6);
+  box-shadow: 0px -82px rgb(231, 228, 6);
+}
+
 /* ------------------ from and back lights ------------------ */
 
 ul li.fromLightsCar {
@@ -254,4 +367,47 @@ ul li.fromLightsCar::before {
   height: 18px;
   background: linear-gradient(90deg, #9b9797, transparent);
   transform: perspective(50px) rotateY(230deg);
+}
+
+ul li.backLightsCar {
+  position: absolute;
+  top: 10px;
+  right: 281px;
+  width: 5px;
+  height: 18px;
+  background-color: rgb(207, 43, 43);
+  transform: rotate(180deg);
+  transform-style: preserve-3d;
+  box-shadow: 0px -59px rgb(207, 43, 43);;
+}
+
+/* ------------------ mirrors ------------------ */
+
+ul li.mirrors {
+  position: absolute;
+  top: -12px;
+  right: 47px;
+  width: 5px;
+  height: 14px;
+  background-color: white;
+  border-radius: 1px 10px 0px 0px;
+}
+
+ul li.mirrors::after {
+  content: '';
+  position: absolute;
+  top: 108px;
+  right: 1px;
+  width: 5px;
+  height: 14px;
+  background-color: white;
+  border-radius: 0px 0px 10px 1px;
+}
+
+.taxi--top ul li.mirrors {
+  background-color: rgb(231, 228, 6);
+}
+
+.taxi--top ul li.mirrors::after {
+  background-color: rgb(231, 228, 6);
 }
